@@ -1,0 +1,379 @@
+body {
+    background-color: #cd6300!important;
+
+}
+
+.container-color {
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+.bg-main-color {
+    background-color: #cd7400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-main-color {
+    color: #000000;
+}
+
+.toggleWrapper input {
+    position: absolute;
+    left: -99em;
+}
+
+.toggle {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    width: 120px;
+    height: 50px;
+    background: #19ff04;
+    border-radius: 5px;
+    transition: all 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    justify-content: center;
+}
+
+.toggle:before,
+.toggle:after {
+    position: absolute;
+    line-height: 50px;
+    font-size: 14px;
+    z-index: 2;
+    transition: all 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.toggle:before {
+    content: "OFF";
+    left: 20px;
+    color: #ca3900;
+}
+
+.toggle:after {
+    content: "ON";
+    right: 20px;
+    color: #fff;
+}
+
+.toggle__handler {
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+    background: #fff;
+    width: 65px;
+    height: 44px;
+    border-radius: 3px;
+    top: 3px;
+    left: 3px;
+    transition: all 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    transform: translateX(0px);
+}
+
+input:checked+.toggle {
+    background: #ff0000;
+}
+
+input:checked+.toggle:before {
+    color: #fff;
+}
+
+input:checked+.toggle:after {
+    color: #ff0000;
+}
+
+input:checked+.toggle .toggle__handler {
+    width: 54px;
+    transform: translateX(60px);
+    border-color: #fff;
+}
+
+
+.perkalian ul {
+    list-style-type: none;
+}
+
+.perkalian li {
+    display: inline-block;
+}
+
+.perkalian input[type="checkbox"][id^="perkalian"] {
+    display: none;
+}
+
+.perkalian label {
+    /* border: 1px solid #fff; */
+    padding: 2px;
+    display: inline-block;
+    position: relative;
+    margin: 2px;
+    cursor: pointer;
+}
+
+.perkalian label:before {
+    background-color: white;
+    color: white;
+    content: " ";
+    display: flex;
+    border-radius: 50%;
+    border: 1px solid grey;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 22px;
+    transition-duration: 0.4s;
+    transform: scale(0);
+}
+
+.perkalian label img {
+    transition-duration: 0.2s;
+    transform-origin: 50% 50%;
+}
+
+.perkalian label span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffffff;
+    transition-duration: 0.3s;
+    text-shadow: 0px -3px 3px rgb(255, 0, 0);
+}
+
+.row-perkalian div:nth-child(n+5) label span {
+    position: absolute;
+    font-size: 25px;
+    top: 50%;
+    left: 50%;
+    animation: jumpY 2s infinite;
+}
+
+.row-perkalian div:nth-child(n+9) label span {
+    position: absolute;
+    font-size: 25px;
+    top: 50%;
+    left: 50%;
+    animation: pulseSpan 2s infinite;
+}
+
+.row-perkalian div:nth-child(n+9) label img {
+    transform: scale(1.4);
+    animation: pulse 2s infinite;
+}
+
+.perkalian :checked+label {
+    border-color: #ddd;
+}
+
+.perkalian :checked+label:before {
+    content: "✓";
+    background-color: #ff800e;
+    transform: scale(1);
+}
+
+.perkalian :checked+label img
+
+/* box-shadow: 0 0 5px #333; */
+    {
+    transform: scale(1.2);
+    z-index: -1;
+}
+
+.perkalian :checked+label span {
+    transform: scale(0.9);
+    color: #FFFAA0;
+}
+
+.on-off-text {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #B6FF00, 0 0 70px #B6FF00, 0 0 80px #B6FF00, 0 0 100px #B6FF00, 0 0 150px #B6FF00;
+}
+
+
+
+@keyframes jumpY {
+    0% {
+        transform: translateY(-5px) translate(-50%, -50%);
+    }
+
+    50% {
+        transform: translateY(0px) translate(-50%, -50%);
+    }
+
+    100% {
+        transform: translateY(-5px) translate(-50%, -50%);
+    }
+}
+
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1.5);
+    }
+
+    30% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1.5);
+    }
+}
+
+@keyframes pulseSpan {
+    0% {
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+}
+
+.title-active h1 span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.title-active h1 span:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+.title-active h1 span:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.title-active h1 span:nth-child(4) {
+    animation-delay: 0.75s;
+}
+
+.title-active h1 span:nth-child(5) {
+    animation-delay: 1s;
+}
+
+.title-active h1 span {
+    display: table-cell;
+    font-size: xxx-large;
+    margin: 0;
+    padding: 0;
+    animation: animateGlow 2s linear infinite;
+}
+
+@keyframes animateGlow {
+
+    0%,
+    100% {
+        color: #fff;
+        filter: blur(2px);
+        text-shadow: 0 0 10px #00e3ff,
+            0 0 20px #00e3ff,
+            0 0 40px #00e3ff,
+            0 0 80px #00e3ff,
+            0 0 120px #00e3ff;
+    }
+
+    5%,
+    95% {
+        color: #fff;
+        filter: blur(0px);
+        text-shadow: none;
+    }
+
+}
+
+.title-active-aktif {
+    -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+    animation: neon2 1.5s ease-in-out infinite alternate;
+    font-size: xxx-large;
+}
+
+@keyframes neon2 {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+    }
+
+    to {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+    }
+}
+
+.perkalian-aktif label span {
+    -webkit-animation: neon3 1.5s ease-in-out infinite alternate;
+    animation: neon3 1.5s ease-in-out infinite alternate;
+    font-size: x-large;
+}
+
+@keyframes neon3 {
+    from {
+        color: #000;
+        text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #FFDD1B, 0 0 10px #FFDD1B, 0 0 12px #FFDD1B, 0 0 14px #FFDD1B, 0 0 16px #FFDD1B;
+    }
+
+    to {
+        color: transparent;
+        text-shadow: 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #fff, 0 0 10px #FFDD1B, 0 0 12px #FFDD1B, 0 0 14px #FFDD1B, 0 0 16px #FFDD1B, 0 0 18px #FFDD1B;
+    }
+}
+.homeHeaderContainer rect {
+    fill: #0168AE;
+  }
+
+  .svg-bg {
+    opacity: 0.35;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+
+
+
+.background {
+  -webkit-animation: offset 10s alternate infinite linear;
+          animation: offset 10s alternate infinite linear;
+  background: linear-gradient(30deg, red, transparent, blue 33%) 28vw 15vh, linear-gradient(45deg, red, transparent, blue 33%) 88vw 84vh, linear-gradient(151deg, red, transparent, blue 33%) 96vw 50vh, linear-gradient(161deg, red, transparent, blue 33%) 36vw 67vh, linear-gradient(14deg, red, transparent, blue 33%) 93vw 2vh, linear-gradient(81deg, red, transparent, blue 33%) 29vw 47vh, linear-gradient(142deg, red, transparent, blue 33%) 69vw 67vh, linear-gradient(2deg, red, transparent, blue 33%) 64vw 84vh, linear-gradient(45deg, red, transparent, blue 33%) 3vw 83vh, linear-gradient(172deg, red, transparent, blue 33%) 45vw 13vh, linear-gradient(179deg, red, transparent, blue 33%) 63vw 73vh, linear-gradient(20deg, red, transparent, blue 33%) 26vw 68vh, linear-gradient(119deg, red, transparent, blue 33%) 49vw 22vh, linear-gradient(93deg, red, transparent, blue 33%) 17vw 78vh, linear-gradient(162deg, red, transparent, blue 33%) 99vw 97vh, linear-gradient(125deg, red, transparent, blue 33%) 47vw 42vh, linear-gradient(179deg, red, transparent, blue 33%) 49vw 55vh, linear-gradient(30deg, red, transparent, blue 33%) 44vw 3vh, linear-gradient(84deg, red, transparent, blue 33%) 6vw 90vh, linear-gradient(91deg, red, transparent, blue 33%) 65vw 4vh, linear-gradient(46deg, red, transparent, blue 33%) 90vw 48vh;
+  background-blend-mode: difference;
+  filter: brightness(450%);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.background::before {
+  background: inherit;
+  background-blend-mode: inherit;
+  mix-blend-mode: difference;
+  filter: brightness(96%);
+  content: "";
+  display: block;
+  position: inherit;
+  top: 1px;
+  left: 1px;
+  bottom: 1px;
+  right: 1px;
+}
+
+@-webkit-keyframes offset {
+  100% {
+    background-position: calc(28vw + 5px) calc(15vh + -20px), calc(88vw + -25px) calc(84vh + -25px), calc(96vw + 5px) calc(50vh + 0px), calc(36vw + -5px) calc(67vh + 20px), calc(93vw + -25px) calc(2vh + 20px), calc(29vw + 15px) calc(47vh + -25px), calc(69vw + 25px) calc(67vh + -10px), calc(64vw + 25px) calc(84vh + -25px), calc(3vw + 15px) calc(83vh + 15px), calc(45vw + 20px) calc(13vh + -20px), calc(63vw + -15px) calc(73vh + 20px), calc(26vw + 0px) calc(68vh + -5px), calc(49vw + -25px) calc(22vh + 15px), calc(17vw + 5px) calc(78vh + -25px), calc(99vw + -10px) calc(97vh + 0px), calc(47vw + -20px) calc(42vh + 5px), calc(49vw + 15px) calc(55vh + 15px), calc(44vw + -10px) calc(3vh + -15px), calc(6vw + 25px) calc(90vh + 0px), calc(65vw + -15px) calc(4vh + -10px), calc(90vw + -10px) calc(48vh + 25px);
+  }
+}
+
+@keyframes offset {
+  100% {
+    background-position: calc(28vw + 5px) calc(15vh + -20px), calc(88vw + -25px) calc(84vh + -25px), calc(96vw + 5px) calc(50vh + 0px), calc(36vw + -5px) calc(67vh + 20px), calc(93vw + -25px) calc(2vh + 20px), calc(29vw + 15px) calc(47vh + -25px), calc(69vw + 25px) calc(67vh + -10px), calc(64vw + 25px) calc(84vh + -25px), calc(3vw + 15px) calc(83vh + 15px), calc(45vw + 20px) calc(13vh + -20px), calc(63vw + -15px) calc(73vh + 20px), calc(26vw + 0px) calc(68vh + -5px), calc(49vw + -25px) calc(22vh + 15px), calc(17vw + 5px) calc(78vh + -25px), calc(99vw + -10px) calc(97vh + 0px), calc(47vw + -20px) calc(42vh + 5px), calc(49vw + 15px) calc(55vh + 15px), calc(44vw + -10px) calc(3vh + -15px), calc(6vw + 25px) calc(90vh + 0px), calc(65vw + -15px) calc(4vh + -10px), calc(90vw + -10px) calc(48vh + 25px);
+  }
+}
